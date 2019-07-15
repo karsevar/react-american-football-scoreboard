@@ -1,9 +1,13 @@
 //TODO: STEP 1 - Import the useState hook.
 import React from "react";
 import "./App.css";
+import { useState, useEffect } from 'react';
+
 import BottomRow from "./BottomRow";
 import ScoreBoard from './ScoreBoard';
-import { useState, useEffect } from 'react';
+import HomeButtons from './HomeButtons';
+import AwayButtons from './AwayButtons';
+
 
 
 
@@ -49,8 +53,10 @@ function App() {
         <BottomRow />
       </section>
       <section className="buttons">
+
+        {/* Separated the homeButton and awayButton into two different components */}
+        {/* 
         <div className="homeButtons">
-          {/* TODO STEP 4 - Now we need to attach our state setter functions to click listeners. */}
           <button 
           className="homeButtons__touchdown"
           onClick={() => setHomeScore(homeScore + 7)} // click handler works
@@ -69,7 +75,13 @@ function App() {
           className="awayButtons__fieldGoal"
           onClick={() => setAwayScore(awayScore + 3)} // click handler works
           >Away Field Goal</button>
-        </div>
+        </div> 
+        */}
+
+        <HomeButtons />
+        <AwayButtons />
+
+
       </section>
     </div>
   );
