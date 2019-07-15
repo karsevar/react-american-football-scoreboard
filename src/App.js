@@ -78,8 +78,9 @@ function App() {
         </div> 
         */}
 
-        <HomeButtons />
-        <AwayButtons />
+        <HomeButtons fromParentSet={setHomeScore} fromParentHome={homeScore} />
+        <AwayButtons fromParentSet={setAwayScore} fromParentAway={awayScore} />
+        {/* Can't believe that the functionality works with only passing the props from parent to child */}
 
 
       </section>
