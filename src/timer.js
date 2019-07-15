@@ -13,6 +13,16 @@ function Timer() {
         setSeconds(0);
     }
 
+    // number to String. function that places zeros at the beginning of numbers.
+    function zeros(number) {
+        let numberString = String(number);
+
+        if (numberString.length !== 2) {
+            numberString = '0' + numberString;
+        }
+        return numberString;
+    }
+
     useEffect(() => {
         let interval = null;
         interval = setInterval(() => {
@@ -28,7 +38,9 @@ function Timer() {
     }, [seconds]);
 
     return (
-        <div className="timer">{minutes}:{seconds}</div>
+        <div className="timer">
+        {zeros(minutes)}:{zeros(seconds)}
+        </div>
     )
 }
 
