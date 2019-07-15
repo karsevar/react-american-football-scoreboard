@@ -15,20 +15,7 @@ function App() {
   //TODO: STEP 2 - Establish your applictaion's state with some useState hooks.  You'll need one for the home score and another for the away score.
   const [awayScore, setAwayScore] = useState(0);
   const [homeScore, setHomeScore] = useState(0);
-
-  // Stretch goal: creating a timer hook using useEffect
-  const [seconds, setSeconds] = useState(0);
-  const [minutes, setMinutes] = useState(0);
-  const [isActive, setIsActive] = useState(false);
-
-  function toggle() {
-    setIsActive(!isActive);
-  }
-
-  useEffect(() => {
-
-  })
-
+  
   return (
     <div className="container">
       <section className="scoreboard">
