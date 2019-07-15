@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 // No need for props in this component since Timer's state
 // is self contained and is rendered to the dom in the function itself.
 function Timer() {
-    const [seconds, setSeconds] = useState(0);
+    const [seconds, setSeconds] = useState(58);
     const [minutes, setMinutes] = useState(0);
     const [isActive, setIsActive] = useState(false);
 
@@ -19,11 +19,16 @@ function Timer() {
             setSeconds(seconds => seconds + 1);
         }, 1000);
 
+        if (seconds === 60) {
+            reset();
+            setMinutes(minutes => minutes + 1);
+        }
+
         return () => clearInterval(interval);
     }, [seconds]);
 
     return (
-        <div className="timer">{seconds}</div>
+        <div className="timer">{minutes}:{seconds}</div>
     )
 }
 
