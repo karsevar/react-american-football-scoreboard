@@ -2,21 +2,38 @@
 import React from "react";
 import "./App.css";
 import BottomRow from "./BottomRow";
-import { useState } from 'react';
+import ScoreBoard from './ScoreBoard';
+import { useState, useEffect } from 'react';
+
+
 
 function App() {
   //TODO: STEP 2 - Establish your applictaion's state with some useState hooks.  You'll need one for the home score and another for the away score.
   const [awayScore, setAwayScore] = useState(0);
   const [homeScore, setHomeScore] = useState(0);
 
+  // Stretch goal: creating a timer hook using useEffect
+  const [seconds, setSeconds] = useState(0);
+  const [minutes, setMinutes] = useState(0);
+  const [isActive, setIsActive] = useState(false);
+
+  function toggle() {
+    setIsActive(!isActive);
+  }
+
+  useEffect(() => {
+
+  })
+
   return (
     <div className="container">
       <section className="scoreboard">
-        <div className="topRow">
+
+        {/*Following markup is in ScoreBoard.js*/}
+
+        {/* <div className="topRow">
           <div className="home">
             <h2 className="home__name">Lions</h2>
-
-            {/* TODO STEP 3 - We need to change the hardcoded values in these divs to accept dynamic values from our state. */}
 
             <div className="home__score">{homeScore}</div>
           </div>
@@ -25,7 +42,10 @@ function App() {
             <h2 className="away__name">Tigers</h2>
             <div className="away__score">{awayScore}</div>
           </div>
-        </div>
+        </div> */}
+
+        <ScoreBoard homeScoreParent={homeScore} awayScoreParent={awayScore} />
+
         <BottomRow />
       </section>
       <section className="buttons">
