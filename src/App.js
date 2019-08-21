@@ -17,6 +17,7 @@ function App() {
   const [homeScore, setHomeScore] = useState(0);
   
   return (
+    <h1>Testing</h1>
     <div className="container">
       <section className="scoreboard">
 
